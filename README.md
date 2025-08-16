@@ -3,6 +3,7 @@
 
 A disposable and secure sandbox environment for safely running the [`crush`](https://github.com/charmbracelet/crush) AI coding assistant, pre-configured for local models and offline use.
 
+![](crush-sandbox.mp4)
 
 ## What is this?
 
