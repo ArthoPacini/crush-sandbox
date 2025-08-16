@@ -1,0 +1,21 @@
+{
+  "name": "Crush Sandbox (Alpine)",
+  "image": "local/crush-sandbox:latest",
+  "initializeCommand": "chmod +x ./.devcontainer/prepare-image.sh && sh ./.devcontainer/prepare-image.sh",
+  "mounts": [
+    "type=bind,source=${localWorkspaceFolder}/crush.json,target=/home/dev/.config/crush/crush.json"
+  ],
+  "runArgs": ["--platform=linux/arm64"],
+  "remoteUser": "dev",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "python3 -m venv .venv && echo 'source .venv/bin/activate' >> ~/.bashrc && mkdir -p ~/.config/crush && crush --version || true && python3 --version",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"
+      }
+    }
+  },
+  "overrideCommand": false
+}

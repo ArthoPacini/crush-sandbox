@@ -1,0 +1,23 @@
+{
+  "providers": {
+    "lmstudio": {
+      "name": "LM Studio",
+      "base_url": "http://host.docker.internal:1234/v1/",
+      "type": "openai",
+      "models": [
+        {
+          "name": "Qwen 3 Coder 30B A3B Instruct",
+          "id": "qwen3-coder-30b-a3b-instruct",
+          "context_window": 262144,
+          "default_max_tokens": 30000
+        }
+      ]
+    }
+  },
+  "models": {
+    "large": {
+      "model": "qwen3-coder-30b-a3b-instruct",
+      "provider": "lmstudio"
+    }
+  }
+}
